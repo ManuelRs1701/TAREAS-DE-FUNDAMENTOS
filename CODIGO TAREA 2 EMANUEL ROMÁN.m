@@ -1,10 +1,9 @@
-% -------------------------------------------------------------------------
 % Universidad Catolica Boliviana San Pablo Regional Santa Cruz de la Sierra
 % Proyecto de controlador PID por localizacion de polos
 % Prof. Rodrigo Ivan Goytia Mejia
 % Estudiante: Emanuel Román Sánchez
 %fecha de presentacion 15/11/2022
-% -------------------------------------------------------------------------
+
 close all
 clear
 clc
@@ -88,33 +87,26 @@ Kc= 13.2805
 Td= 4.3429
 
 %------------------------------------------------------------------------------------------
-% Ensayo 1
+% PRUEBA 1
  %Kc = 5
  %Ti = 0
  %Td = 0
 
-% Ensayo 2
+% PRUEBA 2
  %Kc = 5
  Ti = 100
  %Td = 0
 
-% Ensayo 3
+% PRUEBA 3
  %Kc = 1
  %Ti = 1
  %Td = 1
-
-
-
-
 
 % % Sintonia IMC
  %taulf = 2;
  %Kc = (2*psim/wnm)/(K*taulf)
  %Ti = (2*psim)/wnm
  %Td = 1/(2*psim*wnm^2)
-
-
-
 
 
 %------------------------------------------------------------------------------------------
@@ -129,8 +121,6 @@ Tf = 0.01;   % Filtro derivativo
 % Modelo del controlador PID 
 Gc = Kp+tf(Ki,[1 0])+tf([Kd 0],[Tf 1]);
 % Gc = pid(Kp,Ki,Kd,Tf);
-
-
 
 
 % Sistema realimentado
@@ -158,7 +148,6 @@ w = linspace(pw*yr(pini),-pw*yr(pfin),40);
 d(120:160-1)=w;
 
 
-
 t = 0:1:length(yr)-1;
 
 % Señal de salida del sistema realimentado
@@ -173,7 +162,6 @@ u(1) = u(2);
 
 % Señal de salida del sistema en lazo abierto
 yla = lsim(Gs,yr,t);
-
 
 % Calculo de indicadores
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
